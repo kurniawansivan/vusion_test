@@ -1,0 +1,31 @@
+name: API Ping Test
+
+on:
+  push:
+    branches:
+      - main  # Menjalankan setiap kali ada push ke branch 'main'
+  workflow_dispatch:  # Menjalankan secara manual dari GitHub Actions UI
+
+jobs:
+  ping_test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install requests
+
+    - name: Run Ping Test Script
+      run: |
+        python ping_test.py
+      env:
+        VUSION_API_KEY: ${{ secrets.VUSION_API_KEY }}
+        VUSION_STORE_ID: ${{ secrets.VUSION_STORE_ID }}
