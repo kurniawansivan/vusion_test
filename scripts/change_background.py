@@ -6,6 +6,12 @@ api_key = os.getenv('VUSION_API_KEY')  # API Key dari secrets
 storeId = os.getenv('VUSION_STORE_ID')  # storeId dari secrets
 deviceId = os.getenv('VUSION_DEVICE_ID')  # deviceId dari secrets
 
+# Mengecek apakah storeId dan deviceId sudah benar
+if not storeId or not deviceId:
+    print(f"storeId atau deviceId tidak ditemukan. storeId: {storeId}, deviceId: {deviceId}")
+else:
+    print(f"storeId: {storeId}, deviceId: {deviceId}")
+
 # Endpoint POST untuk mengganti background di device
 url = f"https://eu-api.vusionrail.com/v1/stores/{storeId}/devices/{deviceId}/background"
 

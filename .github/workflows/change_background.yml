@@ -28,5 +28,5 @@ jobs:
         python scripts/change_background.py
       env:
         VUSION_API_KEY: ${{ secrets.VUSION_API_KEY }}
-        storeId: ${{ secrets.VUSION_STORE_ID }}  # Menggunakan storeId
-        deviceId: ${{ secrets.VUSION_DEVICE_ID }}  # Menggunakan deviceId
+        VUSION_STORE_ID: ${{ secrets.VUSION_STORE_ID }}
+        VUSION_DEVICE_ID: ${{ secrets.VUSION_DEVICE_ID }}
