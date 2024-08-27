@@ -9,6 +9,9 @@ deviceId = os.getenv('VUSION_DEVICE_ID')  # deviceId dari secrets
 # Endpoint POST untuk mengganti background di device
 url = f"https://eu-api.vusionrail.com/v1/stores/{storeId}/devices/{deviceId}/background"
 
+# Log URL yang akan digunakan untuk memastikan tidak ada kesalahan
+print(f"URL yang digunakan: {url}")
+
 # Header untuk autentikasi menggunakan Ocp-Apim-Subscription-Key
 headers = {
     "Ocp-Apim-Subscription-Key": api_key,
