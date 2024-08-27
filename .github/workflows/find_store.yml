@@ -1,4 +1,4 @@
-name: API Ping Test
+name: Find Store Test
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:  # Menjalankan secara manual dari GitHub Actions UI
 
 jobs:
-  ping_test:
+  find_store:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,9 +23,9 @@ jobs:
       run: |
         python -m pip install requests
 
-    - name: Run Ping Test Script
+    - name: Run Find Store Script
       run: |
-        python scripts/ping_test.py
+        python find_store.py
       env:
         VUSION_API_KEY: ${{ secrets.VUSION_API_KEY }}
         VUSION_STORE_ID: ${{ secrets.VUSION_STORE_ID }}
