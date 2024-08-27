@@ -25,7 +25,7 @@ jobs:
 
     - name: Run Find Store Script
       run: |
-        python find_store.py
+        python scripts/find_store.py
       env:
         VUSION_API_KEY: ${{ secrets.VUSION_API_KEY }}
         VUSION_STORE_ID: ${{ secrets.VUSION_STORE_ID }}
